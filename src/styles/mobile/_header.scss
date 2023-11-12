@@ -1,0 +1,128 @@
+$header_height: 60px;
+header {
+    background: #00074B;
+    width: 100%;
+    height: $header_height;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 0;
+
+    .section-container{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+    .logo{
+        $size: 50px;
+        max-width: $size;
+        max-height: $size;
+        border-radius: $size;
+        background: #fff;
+        img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    nav {
+        width: 100%;
+        height: fit-content;
+        background-color: #3B47B5;
+        padding: 20px 0;
+        display: none;
+        position: absolute;
+        inset: 60px 0 0 0;
+
+        &.open{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-container{
+            flex-direction: column;
+        }
+
+        ul {
+            list-style: none;
+            li {
+                margin-bottom: 20px;
+                text-align: center;
+                a {
+                    color: #fff;
+                }
+
+            }
+        }
+
+        .contactUs-btn{
+            color: #3B47B5;
+            background: #fff ;
+            padding: 10px 20px;
+            justify-self: center;
+            margin: 0 auto;
+            border-radius: 40px 0;
+        }
+    }
+
+    .nav_tab_icon {
+        $size: 40px;
+        width: $size - 20px;
+        height: $size;
+        position: absolute;
+        z-index: 3;
+        $dimension: 15px;
+        top: $dimension;
+        right: $dimension;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .item {
+            $height: 4px;
+            height: $height;
+            border-radius: $height;
+            background-color: #fff;
+            margin-bottom: 4px;
+            transition: all linear 0.2s;
+
+            &:nth-child(1) {
+                width: 100%;
+            }
+
+            &:nth-child(2) {
+                width: 60%;
+            }
+
+            &:nth-child(3) {
+                width: 30%;
+            }
+        }
+
+        &.open {
+            .item {
+                $height: 5px;
+                height: $height;
+                border-radius: $height;
+                margin-bottom: 6px;
+
+                &:nth-child(1) {
+                    width: 100%;
+                    transform: rotate(-45deg) translate(-8px, 6px);
+                }
+
+                &:nth-child(2) {
+                    width: 100%;
+                    transform: rotate(45deg);
+                }
+
+                &:nth-child(3) {
+                    display: none;
+                }
+            }
+        }
+    }
+}

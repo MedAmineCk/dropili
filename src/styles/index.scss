@@ -1,0 +1,27 @@
+@import "main.css";
+@import "normalize.css";
+@import "variables";
+@import "default";
+@import "faqs";
+@import "companies";
+
+html, body {
+  background: colors(main_bg);
+  font-family: 'Tajawal', sans-serif;
+
+
+  main{
+    background: #fff;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+}
+
+@media (max-width: 768px) {
+  @import 'mobile';
+}
+
+@media (min-width: 769px) {
+  @import 'desktop';
+}
